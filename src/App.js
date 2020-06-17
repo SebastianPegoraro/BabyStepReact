@@ -15,6 +15,7 @@ export class App extends Component {
     render() {
         return (
             <div>
+                <Widget update={this.update.bind(this)}></Widget>
                 <input type="text" onChange={this.update.bind(this)} ></input>
                 <h1>Testing Render</h1>
         <h3>{this.props.txt}</h3>
@@ -23,6 +24,9 @@ export class App extends Component {
         )
     }
 }
+//Stateless function
+const Widget = (props) => 
+<input type="text" onChange={props.update} ></input>
 
 App.propTypes = {
     txt: PropTypes.string,
