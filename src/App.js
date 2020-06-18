@@ -6,11 +6,16 @@ export class App extends Component {
         super();
         this.state = {
             txt: 'state text',
-            cat: 0
+            cat: 0,
+            currentEvent: '----'
         }
+        this.update = this.update.bind(this)
     }
     update( e ){
-        this.setState({txt: e.target.value})
+        this.setState({
+            txt: e.target.value,
+            currentEvent: e.type  //React Synthetic Event System
+        })
     }
     render() {
         return (
@@ -23,6 +28,22 @@ export class App extends Component {
 
                 <div>
                     <Button>I <Heart></Heart> Random</Button>
+                </div>
+
+                <div> 
+                    <textarea 
+                        onKeyPress={this.update}
+                        onCopy={this.update}
+                        onCut={this.update}
+                        onPaste={this.update}
+                        onFocus={this.update}
+                        onBlur={this.update}
+                        onDoubleClick={this.update}
+                        cols="30" 
+                        rows="10" 
+                    />
+
+                    <h1>{this.state.currentEvent}</h1>
                 </div>
             </div>
         )
