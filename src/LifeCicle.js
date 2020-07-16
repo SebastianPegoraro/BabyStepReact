@@ -13,18 +13,21 @@ export class LifeCicle extends PureComponent {
     }
     componentWillMount(){
         console.log('componentWillMount')
+        this.setState({multiplicador: 2})
     }
     componentDidMount(){
         console.log('componentDidMount')
+        this.inc = setInterval(this.update,500)
     }
     componentWillUnmount(){
         console.log('componentWillUnmount')
+        clearInterval(this.inc)
     }
     render() {
         console.log('render');
         return (
             <div>
-                <button onClick={this.update}>{this.state.val}</button>
+                <button onClick={this.update}>{this.state.val * this.state.multiplicador}</button>
             </div>
         )
     }
