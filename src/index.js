@@ -4,6 +4,7 @@ import App from './App';
 import LifeCicle from './LifeCicle';
 import UpdateWhenNewProp from './UpdateWhenNewProp';
 import MapFromArray from './MapFromArray';
+import HigherOrderComponent from './HigherOrderComponent';
 /*
 ReactDOM.render(
   <React.StrictMode>
@@ -25,7 +26,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('update')
 );
-*/
 
 ReactDOM.render(
   <React.StrictMode>
@@ -33,4 +33,11 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('map')
 )
+*/
 
+ReactDOM.render(
+  <React.StrictMode>
+    <HigherOrderComponent />
+  </React.StrictMode>,
+  document.getElementById('hoc')
+)
