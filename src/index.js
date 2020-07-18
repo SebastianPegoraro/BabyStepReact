@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import LifeCicle from './LifeCicle';
 import UpdateWhenNewProp from './UpdateWhenNewProp';
-
+import MapFromArray from './MapFromArray';
+/*
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -24,3 +25,12 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('update')
 );
+*/
+
+ReactDOM.render(
+  <React.StrictMode>
+    <MapFromArray />
+  </React.StrictMode>,
+  document.getElementById('map')
+)
+
